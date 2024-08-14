@@ -14,6 +14,12 @@
 .display-flex{
     display: flex;
 }
+
+/* text primary */
+.text-primary{
+    color: #FF900E;
+}
+
 /* dark 02 */
 .text-grey{
     color: #424242;
@@ -48,6 +54,11 @@
 }
 main >section{
     gap: 130px;
+}
+
+.section-title{
+    font-size: 2.8rem;
+    font-weight: 700;
 }
 
 
@@ -106,24 +117,106 @@ main >section{
    margin-left: 73px ;
    width: 537px;
 }
-.feature-title{
-    font-size: 2.8rem;
-    font-weight: 700;
-}
+
 
 #quick-list{
     font-weight: 500;
 }
 
+/* facts card styles */
+.section-description{
+    max-width: 540px;
+}
 
+.facts-container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+
+.fact{
+    border: 1px solid #FF900E;
+    border-radius: 10px;
+    height: 240px;
+    width: 240px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+
+}
+
+.fact-num{
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.fact-name{
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+    /* sponsor styles */
+    .sponsor-info{
+        max-width: 540px;
+        margin: 0 auto;
+        text-align: center;
+     
+    }
+
+    .sponsor-img{
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        filter: grayscale(100%);
+        
+    }
 
 
 
 /* responsive media query */
 
 @media screen and (max-width:576px) {
-    .nav , .nav-links{
+    .nav , .nav-links , .teams{
         flex-direction: column;
+    }
+
+    .team-img-container , .facts-container , .sponsor-img{
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .facts-container{
+        justify-content: center;
+        gap:24px;
+    }
+    .our-feature{
+        margin-left: 20px;
+    }
+
+    .sponsor-img{
+        justify-content: center;
+        gap: 24px;
+    }
+
+
+
+
+    /* medium device */
+
+    @media screen and (min-width:576px) and (max-width:992px) {
+        .teams{
+            flex-direction: column;
+        }
+        .our-feature{
+            margin-left: 50px auto;
+        }
+        .sponsor-img, .facts-container{
+            grid-template-columns: repeat(2,1fr);
+            gap: 50px;
+            justify-items: center;
+        }
+
     }
     
 }
